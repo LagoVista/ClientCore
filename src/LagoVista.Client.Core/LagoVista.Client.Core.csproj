@@ -1,0 +1,38 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard1.3</TargetFramework>
+    <NetStandardImplicitPackageVersion>2.0.1</NetStandardImplicitPackageVersion>
+    <SignAssembly>False</SignAssembly>
+    <DelaySign>False</DelaySign>
+    <DebugType>Full</DebugType>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='iOS Build|AnyCPU'" />
+  <ItemGroup>
+    <Compile Remove="Orgs\**" />
+    <EmbeddedResource Remove="Orgs\**" />
+    <None Remove="Orgs\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Icons\ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="LagoVista.Core" Version="1.2.181-alpha1716" />
+    <PackageReference Include="LagoVista.Core.Authentication" Version="1.2.181-alpha1716" />
+    <PackageReference Include="LagoVista.Core.Networking" Version="1.2.181-alpha1716" />
+    <PackageReference Include="LagoVista.UserAdmin" Version="1.2.181-alpha1716" />
+    <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Resources\ClientResources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ClientResources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="Resources\ClientResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ClientResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>
