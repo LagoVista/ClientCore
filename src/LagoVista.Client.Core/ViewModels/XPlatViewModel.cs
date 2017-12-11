@@ -1,6 +1,8 @@
-﻿using LagoVista.Client.Core.ViewModels.Auth;
+﻿using LagoVista.Client.Core.Auth;
+using LagoVista.Client.Core.ViewModels.Auth;
 using LagoVista.Client.Core.ViewModels.Orgs;
 using LagoVista.Core.Commanding;
+using LagoVista.Core.IOC;
 using LagoVista.Core.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -26,7 +28,7 @@ namespace LagoVista.Client.Core.ViewModels
         None,
         Menu,
         Back,
-        Cancel,        
+        Cancel,
         CustomIcon,
         CustomText
     }
@@ -97,7 +99,7 @@ namespace LagoVista.Client.Core.ViewModels
                     ViewModelNavigation.NavigateAsync(launchArgs);
                 }
             }
-            else if(uri.Host == "acceptinvite")
+            else if (uri.Host == "acceptinvite")
             {
                 if (!kvps.ContainsKey("inviteid"))
                 {
@@ -115,7 +117,7 @@ namespace LagoVista.Client.Core.ViewModels
             }
         }
 
-        protected  Task NavigateAndViewAsync<TViewModel>(string id)
+        protected Task NavigateAndViewAsync<TViewModel>(string id)
         {
             var launchArgs = new ViewModelLaunchArgs()
             {
@@ -147,6 +149,8 @@ namespace LagoVista.Client.Core.ViewModels
             return ViewModelNavigation.NavigateAsync(launchArgs);
         }
 
+        protected ISecureStorage SecureStorage { get { return SLWIOC.Get<ISecureStorage>(); } }
+
         public virtual void Edit()
         {
 
@@ -172,7 +176,7 @@ namespace LagoVista.Client.Core.ViewModels
         /// </summary>
         /// <returns></returns>
         public virtual Task<bool> CanCancelAsync()
-        {           
+        {
             return Task.FromResult(true);
         }
 
