@@ -1,10 +1,14 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
+    <VersionPrefix>1.2</VersionPrefix>
     <TargetFramework>netstandard1.3</TargetFramework>
     <NetStandardImplicitPackageVersion>2.0.1</NetStandardImplicitPackageVersion>
-    <SignAssembly>False</SignAssembly>
+    <SignAssembly>true</SignAssembly>
     <DelaySign>False</DelaySign>
     <DebugType>Full</DebugType>
+    <AssemblyOriginatorKeyFile>clientcore.key.snk</AssemblyOriginatorKeyFile>
+    <AssemblyVersion>1.2.1.1</AssemblyVersion>
+    <FileVersion>1.2.1.1</FileVersion>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='iOS Build|AnyCPU'" />
   <ItemGroup>
@@ -16,11 +20,11 @@
     <Content Include="Icons\ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="LagoVista.Core" Version="1.2.181-alpha1716" />
-    <PackageReference Include="LagoVista.Core.Authentication" Version="1.2.181-alpha1716" />
-    <PackageReference Include="LagoVista.Core.Networking" Version="1.2.181-alpha1716" />
-    <PackageReference Include="LagoVista.UserAdmin" Version="1.2.181-alpha1716" />
-    <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
+    <PackageReference Include="LagoVista.Core" Version="1.2.211-alpha1209" />
+    <PackageReference Include="LagoVista.Core.Authentication" Version="1.2.211-alpha1209" />
+    <PackageReference Include="LagoVista.Core.Networking" Version="1.2.211-alpha1209" />
+    <PackageReference Include="LagoVista.UserAdmin.Models" Version="1.2.211-alpha1209" />
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.1-beta1" />
   </ItemGroup>
   <ItemGroup>
     <Compile Update="Resources\ClientResources.Designer.cs">
