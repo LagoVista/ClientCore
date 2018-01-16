@@ -1,4 +1,4 @@
-LagoVista.Core=1.2.181-alpha1716
-LagoVista.Core.Authentication=1.2.181-alpha1716
-LagoVista.Core.Networking=1.2.181-alpha1716
-LagoVista.UserAdmin=1.2.181-alpha1716
+LagoVista.Core=1.2.211-alpha1209
+LagoVista.Core.Authentication=1.2.211-alpha1209
+LagoVista.Core.Networking=1.2.211-alpha1209
+LagoVista.UserAdmin.Models=1.2.211-alpha1209
